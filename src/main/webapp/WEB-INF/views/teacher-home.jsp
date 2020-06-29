@@ -5,19 +5,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Teacher Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello Teacher!</h1>
         <p>
             User:<security:authentication property="principal.username"/>
             <br/>
             Role(s):<security:authentication property="principal.authorities"/>
         </p>
-        <hr/>
-        <a href="${pageContext.request.contextPath}/admin">Administrator</a>
-        <br/>
-        <a href="${pageContext.request.contextPath}/teacher">Teacher</a>
         <hr/>
         <form:form method="POST" action="${pageContext.request.contextPath}/logout">
             <input type="submit" value="Logout"/>
