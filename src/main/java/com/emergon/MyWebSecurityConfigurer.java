@@ -23,8 +23,8 @@ public class MyWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()//Restrict access based on the HttpServletRequest
                 .antMatchers("/").hasAnyRole("ADMIN", "USER", "TEACHER")
-                .antMatchers("/admin").hasRole("ADMIN")
-                .antMatchers("/teacher").hasRole("TEACHER")
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/teacher/**").hasRole("TEACHER")
                 .and()
                 .formLogin()//We are customizing the form login process
                 .loginPage("/loginPage")//This is the url to show the login page
